@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="BookHive - India's favourite online bookstore. Discover books in Hindi, English, Tamil, Bengali and more. Best prices, fast delivery across India." />
+  <meta name="keywords" content="books, indian bookstore, hindi books, english books, buy books online india" />
+  <meta name="author" content="Foncho Afanwi" />
   <title>BookHive - An Indian Online Bookstore</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/home.css" />
@@ -10,64 +13,161 @@
 </head>
 <body>
 
-  <nav class="navbar">
-    <div class="container">
-      <a href="index.html" class="logo">Book<span>Hive</span> 📚</a>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="books.html">Books</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="login.html">Login</a></li>
-        <li class="nav-cart"><a href="cart.html">🛒 Cart <span class="cart-count" id="cartCount">0</span></a></li>
-      </ul>
-    </div>
-  </nav>
+  <!-- HEADER WITH NAVIGATION -->
+  <header>
+    <h1>📚 BookHive</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="books.html">Books</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="cart.html">🛒 Cart (0)</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container">
-      <h1>India's Favourite Online Bookstore 📖</h1>
-      <p>Discover books in Hindi, English, Tamil, Bengali & more</p>
-      <div class="hero-buttons">
-        <a href="books.html" class="btn btn-primary">Browse Books</a>
-        <a href="about.html" class="btn btn-outline" style="color:#F8F1E4;border-color:#F8F1E4;">Our Story</a>
+  <!-- MAIN CONTENT -->
+  <main>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <h2>Welcome to BookHive — Where Every Page Tells a Story 📖</h2>
+      <p>
+        From the bustling lanes of Old Delhi to the quiet hills of Meghalaya,
+        BookHive brings the world of books to every Indian doorstep.
+        Discover timeless classics, regional gems, and modern bestsellers —
+        all at prices that make reading a habit, not a luxury.
+      </p>
+      <a href="books.html" class="btn">Browse Books</a>
+    </section>
+
+    <!-- FEATURED BOOKS SECTION -->
+    <section class="featured">
+      <h2>Featured Books</h2>
+
+      <article class="book-card">
+        <img src="images/wings-of-fire.jpg" alt="Wings of Fire book cover" />
+        <h3>Wings of Fire</h3>
+        <p>A.P.J. Abdul Kalam</p>
+        <p class="price">₹250</p>
+        <button>Add to Cart</button>
+      </article>
+
+      <article class="book-card">
+        <img src="images/the-alchemist.jpg" alt="The Alchemist book cover" />
+        <h3>The Alchemist</h3>
+        <p>Paulo Coelho</p>
+        <p class="price">₹350</p>
+        <button>Add to Cart</button>
+      </article>
+
+      <article class="book-card">
+        <img src="images/white-tiger.jpg" alt="The White Tiger book cover" />
+        <h3>The White Tiger</h3>
+        <p>Aravind Adiga</p>
+        <p class="price">₹299</p>
+        <button>Add to Cart</button>
+      </article>
+
+      <article class="book-card">
+        <img src="images/malgudi-days.jpg" alt="Malgudi Days book cover" />
+        <h3>Malgudi Days</h3>
+        <p>R.K. Narayan</p>
+        <p class="price">₹199</p>
+        <button>Add to Cart</button>
+      </article>
+
+      <article class="book-card">
+        <img src="images/god-of-small-things.jpg" alt="The God of Small Things book cover" />
+        <h3>The God of Small Things</h3>
+        <p>Arundhati Roy</p>
+        <p class="price">₹349</p>
+        <button>Add to Cart</button>
+      </article>
+
+      <article class="book-card">
+        <img src="images/discovery-of-india.jpg" alt="The Discovery of India book cover" />
+        <h3>The Discovery of India</h3>
+        <p>Jawaharlal Nehru</p>
+        <p class="price">₹450</p>
+        <button>Add to Cart</button>
+      </article>
+
+    </section>
+
+    <!-- CATEGORIES SECTION -->
+    <section class="categories">
+      <h2>Browse by Category</h2>
+
+      <div class="category">
+        <h3>Fiction</h3>
+        <p>Novels, Short Stories, Fantasy</p>
       </div>
-    </div>
-  </section>
 
-  <!-- Featured Books -->
-  <section id="featured">
-    <div class="container">
-      <h2 style="text-align:center; margin-bottom:32px;">Featured Books</h2>
-      <div class="books-grid" id="featuredBooks">
-        <!-- Populated by main.js -->
+      <div class="category">
+        <h3>Education</h3>
+        <p>Textbooks, Study Guides</p>
       </div>
-    </div>
-  </section>
 
-  <!-- Categories -->
-  <section style="background: var(--light-gray);">
-    <div class="container">
-      <h2 style="text-align:center; margin-bottom:32px;">Browse by Category</h2>
-      <div class="categories-grid">
-        <div class="category-card"><div class="icon">📚</div>Fiction</div>
-        <div class="category-card"><div class="icon">🧘</div>Self-Help</div>
-        <div class="category-card"><div class="icon">🇮🇳</div>Indian Authors</div>
-        <div class="category-card"><div class="icon">👶</div>Children</div>
-        <div class="category-card"><div class="icon">📜</div>History</div>
-        <div class="category-card"><div class="icon">💻</div>Technology</div>
+      <div class="category">
+        <h3>Biographies</h3>
+        <p>Inspiring Stories of Remarkable People</p>
       </div>
-    </div>
-  </section>
 
+      <div class="category">
+        <h3>Business</h3>
+        <p>Entrepreneurship, Leadership</p>
+      </div>
+
+      <div class="category">
+        <h3>Self-Help</h3>
+        <p>Mindfulness, Motivation, Wellness</p>
+      </div>
+
+      <div class="category">
+        <h3>Indian Languages</h3>
+        <p>Hindi, Tamil, Bengali, Marathi</p>
+      </div>
+
+    </section>
+
+    <!-- WHY BOOKHIVE SECTION -->
+    <section class="why-us">
+      <h2>Why Choose BookHive?</h2>
+
+      <div class="feature">
+        <h3>🇮🇳 Made for India</h3>
+        <p>Books in 10+ Indian languages with regional author spotlights every week.</p>
+      </div>
+
+      <div class="feature">
+        <h3>💰 Best Prices</h3>
+        <p>Up to 40% off on bestsellers. Free delivery on orders above ₹499.</p>
+      </div>
+
+      <div class="feature">
+        <h3>🚚 Fast Delivery</h3>
+        <p>Delivered to 27,000+ pin codes across India in 3–5 business days.</p>
+      </div>
+
+      <div class="feature">
+        <h3>🎁 Festive Deals</h3>
+        <p>Special discounts during Diwali, Navratri, Eid, Christmas & more.</p>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
   <footer>
-    <div class="container">
-      <p>© 2025 <strong>BookHive</strong> — An Indian Online Bookstore 🇮🇳</p>
-      <p style="margin-top:8px">Made with ❤️ for readers across India | <a href="contact.html">Contact Us</a></p>
-    </div>
+    <p>© 2025 BookHive. All rights reserved.</p>
+    <p>
+      <a href="about.html">About</a> |
+      <a href="contact.html">Contact</a> |
+      <a href="privacy.html">Privacy Policy</a>
+    </p>
   </footer>
 
-  <script src="js/main.js"></script>
 </body>
 </html>
