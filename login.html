@@ -44,14 +44,18 @@
         <!-- Password field -->
         <div class="form-group">
           <label for="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            placeholder="Enter your password"
-            minlength="6"
-            required
-          >
+          <div style="position:relative; display:flex;">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+              minlength="6"
+              required
+              style="flex:1;"
+            >
+            <button type="button" id="toggle-password" class="toggle-btn" style="position:absolute; right:10px; top:50%; transform:translateY(-50%); background:none; border:none; cursor:pointer; font-size:1.1rem;">👁️</button>
+          </div>
         </div>
 
         <!-- Remember me checkbox -->
@@ -83,5 +87,6 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/login.js"></script>
 </body>
 </html>
