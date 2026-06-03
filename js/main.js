@@ -161,12 +161,4 @@ function createBookCard(book) {
 // --- On page load ---
 document.addEventListener('DOMContentLoaded', () => {
   updateCartCount();
-
-  // Render featured books on homepage
-  const featuredEl = document.getElementById('featuredBooks');
-  if (featuredEl) {
-    BOOKS.slice(0, 4).forEach(book => {
-      featuredEl.innerHTML += createBookCard(book);
-    });
-  }
 });
