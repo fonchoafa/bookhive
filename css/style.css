@@ -16,6 +16,26 @@
   --light-gray: #F4F4F4;
   --text-dark:  #2C3E50;
   --text-muted: #7F8C8D;
+
+  /* Phase 6-8 task variables */
+  --primary:    #5B3A29;
+  --accent:     #F4A261;
+  --bg:         #FFF8F0;
+  --success:    #2E7D32;
+  --error:      #C62828;
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+
+  /* Other */
+  --border-radius: 8px;
+  --max-width: 1200px;
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 /* --- Reset --- */
@@ -177,3 +197,50 @@ section { padding: 60px 0; }
 .contact-info h3 { margin-bottom: 14px; font-size: 1.2rem; }
 .contact-info p { margin-bottom: 10px; font-size: 0.95rem; }
 .contact-info a { color: var(--crimson); font-weight: 600; }
+
+/* =============================================
+   ANIMATIONS (Phase 8)
+   ============================================= */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.05); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.hero h2,
+.hero p,
+.hero .btn {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+.hero p { animation-delay: 0.2s; opacity: 0; }
+.hero .btn { animation-delay: 0.4s; opacity: 0; }
+
+.sale-tag {
+  background: var(--error);
+  color: var(--white);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  display: inline-block;
+  animation: pulse 2s infinite;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: var(--space-lg) auto;
+}
