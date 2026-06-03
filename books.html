@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Books - BookHive</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Books - BookHive</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/home.css" />
   <link rel="stylesheet" href="css/books.css" />
@@ -11,79 +11,185 @@
 </head>
 <body>
 
-  <nav class="navbar">
-    <div class="container">
-      <a href="index.html" class="logo">Book<span>Hive</span> 📚</a>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="books.html">Books</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="login.html">Login</a></li>
-        <li class="nav-cart"><a href="cart.html">🛒 Cart <span class="cart-count" id="cartCount">0</span></a></li>
+  <header>
+    <h1>📚 BookHive</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="books.html">Books</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="cart.html">🛒 Cart (0)</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- PAGE TITLE -->
+    <section class="page-header">
+      <h2>All Books</h2>
+      <p>Browse our complete collection of 2,000+ books</p>
+    </section>
+
+    <!-- SEARCH AND FILTERS -->
+    <section class="filters">
+      <div class="search-box">
+        <input
+          type="search"
+          id="search-input"
+          placeholder="Search books, authors, or genres..."
+        >
+        <button type="button">Search</button>
+      </div>
+      <div class="filter-controls">
+        <label for="category-filter">Category:</label>
+        <select id="category-filter">
+          <option value="all">All Categories</option>
+          <option value="fiction">Fiction</option>
+          <option value="education">Education</option>
+          <option value="biography">Biographies</option>
+          <option value="business">Business</option>
+        </select>
+        <label for="sort">Sort by:</label>
+        <select id="sort">
+          <option value="default">Default</option>
+          <option value="price-low">Price: Low to High</option>
+          <option value="price-high">Price: High to Low</option>
+          <option value="rating">Rating</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- POPULAR CATEGORIES (unordered list) -->
+    <section class="categories-quick">
+      <h3>Popular Categories</h3>
+      <ul class="category-list">
+        <li><a href="#fiction">Fiction</a></li>
+        <li><a href="#nonfiction">Non-Fiction</a></li>
+        <li><a href="#biography">Biographies</a></li>
+        <li><a href="#business">Business</a></li>
+        <li><a href="#children">Children</a></li>
+        <li><a href="#comics">Comics</a></li>
       </ul>
-    </div>
-  </nav>
+    </section>
 
-  <div class="page-header">
-    <div class="container">
-      <h1>All Books</h1>
-      <p style="color:var(--marigold); margin-top:8px;">Explore our collection of 10,000+ titles</p>
-    </div>
-  </div>
+    <!-- BOOKS GRID -->
+    <section class="books-grid" id="books-container">
 
-  <div class="container">
-    <div class="books-layout">
+      <article class="book-card">
+        <img src="images/books/wings-of-fire.jpg" alt="Wings of Fire" loading="lazy">
+        <h3>Wings of Fire</h3>
+        <p class="author">A.P.J. Abdul Kalam</p>
+        <p class="rating">⭐ 4.8 (2,341 reviews)</p>
+        <p class="price">₹299</p>
+        <button class="add-to-cart" data-id="1">Add to Cart</button>
+      </article>
 
-      <!-- Sidebar Filter -->
-      <aside class="filter-sidebar">
-        <h3>Filter Books</h3>
-        <div class="filter-group">
-          <label>Genre</label>
-          <select id="filterGenre">
-            <option value="">All Genres</option>
-            <option value="fiction">Fiction</option>
-            <option value="non-fiction">Non-Fiction</option>
-            <option value="self-help">Self-Help</option>
-            <option value="children">Children</option>
-            <option value="history">History</option>
-          </select>
-        </div>
-        <div class="filter-group">
-          <label>Language</label>
-          <select id="filterLang">
-            <option value="">All Languages</option>
-            <option value="english">English</option>
-            <option value="hindi">Hindi</option>
-            <option value="tamil">Tamil</option>
-            <option value="bengali">Bengali</option>
-          </select>
-        </div>
-        <div class="filter-group">
-          <label>Max Price: ₹<span id="priceVal">1000</span></label>
-          <input type="range" id="filterPrice" min="100" max="2000" value="1000" />
-        </div>
-        <button class="btn btn-primary" style="width:100%" onclick="filterBooks()">Apply Filters</button>
-      </aside>
+      <article class="book-card">
+        <img src="images/books/the-alchemist.jpg" alt="The Alchemist" loading="lazy">
+        <h3>The Alchemist</h3>
+        <p class="author">Paulo Coelho</p>
+        <p class="rating">⭐ 4.7 (5,012 reviews)</p>
+        <p class="price">₹349</p>
+        <button class="add-to-cart" data-id="2">Add to Cart</button>
+      </article>
 
-      <!-- Books Grid -->
-      <main>
-        <div class="search-bar">
-          <input type="text" id="searchInput" placeholder="Search by title, author..." />
-          <button class="btn btn-primary" onclick="searchBooks()">Search</button>
-        </div>
-        <div class="books-grid" id="booksGrid">
-          <!-- Populated by books.js -->
-        </div>
-      </main>
+      <article class="book-card">
+        <img src="images/books/atomic-habits.jpg" alt="Atomic Habits" loading="lazy">
+        <h3>Atomic Habits</h3>
+        <p class="author">James Clear</p>
+        <p class="rating">⭐ 4.9 (8,420 reviews)</p>
+        <p class="price">₹499</p>
+        <button class="add-to-cart" data-id="3">Add to Cart</button>
+      </article>
 
-    </div>
-  </div>
+      <article class="book-card">
+        <img src="images/books/white-tiger.jpg" alt="The White Tiger" loading="lazy">
+        <h3>The White Tiger</h3>
+        <p class="author">Aravind Adiga</p>
+        <p class="rating">⭐ 4.5 (1,890 reviews)</p>
+        <p class="price">₹299</p>
+        <button class="add-to-cart" data-id="4">Add to Cart</button>
+      </article>
+
+      <article class="book-card">
+        <img src="images/books/malgudi-days.jpg" alt="Malgudi Days" loading="lazy">
+        <h3>Malgudi Days</h3>
+        <p class="author">R.K. Narayan</p>
+        <p class="rating">⭐ 4.6 (3,210 reviews)</p>
+        <p class="price">₹199</p>
+        <button class="add-to-cart" data-id="5">Add to Cart</button>
+      </article>
+
+      <article class="book-card">
+        <img src="images/books/god-of-small-things.jpg" alt="The God of Small Things" loading="lazy">
+        <h3>The God of Small Things</h3>
+        <p class="author">Arundhati Roy</p>
+        <p class="rating">⭐ 4.7 (4,100 reviews)</p>
+        <p class="price">₹349</p>
+        <button class="add-to-cart" data-id="6">Add to Cart</button>
+      </article>
+
+      <article class="book-card">
+        <img src="images/books/discovery-of-india.jpg" alt="The Discovery of India" loading="lazy">
+        <h3>The Discovery of India</h3>
+        <p class="author">Jawaharlal Nehru</p>
+        <p class="rating">⭐ 4.6 (2,780 reviews)</p>
+        <p class="price">₹450</p>
+        <button class="add-to-cart" data-id="7">Add to Cart</button>
+      </article>
+
+      <article class="book-card">
+        <img src="images/books/ikigai.jpg" alt="Ikigai" loading="lazy">
+        <h3>Ikigai</h3>
+        <p class="author">Héctor García</p>
+        <p class="rating">⭐ 4.5 (6,320 reviews)</p>
+        <p class="price">₹399</p>
+        <button class="add-to-cart" data-id="8">Add to Cart</button>
+      </article>
+
+      <article class="book-card">
+        <img src="images/books/rich-dad-poor-dad.jpg" alt="Rich Dad Poor Dad" loading="lazy">
+        <h3>Rich Dad Poor Dad</h3>
+        <p class="author">Robert Kiyosaki</p>
+        <p class="rating">⭐ 4.4 (9,100 reviews)</p>
+        <p class="price">₹329</p>
+        <button class="add-to-cart" data-id="9">Add to Cart</button>
+      </article>
+
+      <article class="book-card">
+        <img src="images/books/panchatantra.jpg" alt="Panchatantra" loading="lazy">
+        <h3>Panchatantra</h3>
+        <p class="author">Vishnu Sharma</p>
+        <p class="rating">⭐ 4.8 (1,540 reviews)</p>
+        <p class="price">₹120</p>
+        <button class="add-to-cart" data-id="10">Add to Cart</button>
+      </article>
+
+      <article class="book-card">
+        <img src="images/books/godan.jpg" alt="Godan" loading="lazy">
+        <h3>Godan</h3>
+        <p class="author">Munshi Premchand</p>
+        <p class="rating">⭐ 4.7 (2,050 reviews)</p>
+        <p class="price">₹149</p>
+        <button class="add-to-cart" data-id="11">Add to Cart</button>
+      </article>
+
+      <article class="book-card">
+        <img src="images/books/sapiens.jpg" alt="Sapiens" loading="lazy">
+        <h3>Sapiens</h3>
+        <p class="author">Yuval Noah Harari</p>
+        <p class="rating">⭐ 4.8 (11,200 reviews)</p>
+        <p class="price">₹599</p>
+        <button class="add-to-cart" data-id="12">Add to Cart</button>
+      </article>
+
+    </section>
+
+  </main>
 
   <footer>
-    <div class="container">
-      <p>© 2025 <strong>BookHive</strong> — An Indian Online Bookstore 🇮🇳</p>
-    </div>
+    <p>&copy; 2026 BookHive. All rights reserved.</p>
   </footer>
 
   <script src="js/main.js"></script>

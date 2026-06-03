@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Book Detail - BookHive</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wings of Fire - BookHive</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/home.css" />
   <link rel="stylesheet" href="css/books.css" />
@@ -11,30 +11,116 @@
 </head>
 <body>
 
-  <nav class="navbar">
-    <div class="container">
-      <a href="index.html" class="logo">Book<span>Hive</span> 📚</a>
-      <ul class="nav-links">
+  <header>
+    <h1>📚 BookHive</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="books.html">Books</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="cart.html">🛒 Cart (0)</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Breadcrumb navigation using ordered list -->
+    <nav class="breadcrumb">
+      <ol>
         <li><a href="index.html">Home</a></li>
         <li><a href="books.html">Books</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="login.html">Login</a></li>
-        <li class="nav-cart"><a href="cart.html">🛒 Cart <span class="cart-count" id="cartCount">0</span></a></li>
-      </ul>
-    </div>
-  </nav>
+        <li>Wings of Fire</li>
+      </ol>
+    </nav>
 
-  <div class="container">
-    <div class="book-detail" id="bookDetail">
-      <!-- Populated by books.js based on URL param ?id= -->
-    </div>
-  </div>
+    <article class="book-detail">
+
+      <div class="book-image">
+        <img src="images/books/wings-of-fire.jpg" alt="Wings of Fire book cover">
+      </div>
+
+      <div class="book-info">
+        <h2>Wings of Fire</h2>
+        <p class="author">by <strong>A.P.J. Abdul Kalam</strong></p>
+        <div class="rating">
+          ⭐⭐⭐⭐⭐ 4.8 out of 5 (2,341 reviews)
+        </div>
+        <p class="price">₹299 <small><s>₹499</s> (40% off)</small></p>
+        <p class="description">
+          Wings of Fire is the autobiography of A.P.J. Abdul Kalam, India's
+          11th president and a renowned aerospace scientist. The book traces
+          his journey from a small town in Tamil Nadu to becoming one of
+          India's most beloved figures. A story of determination, vision, and
+          the power of dreaming big against all odds.
+        </p>
+
+        <!-- Book details using a description list -->
+        <h3>Book Details</h3>
+        <dl class="book-details">
+          <dt>Publisher:</dt>
+          <dd>Universities Press</dd>
+          <dt>Language:</dt>
+          <dd>English</dd>
+          <dt>Pages:</dt>
+          <dd>180</dd>
+          <dt>ISBN:</dt>
+          <dd>9788173711466</dd>
+          <dt>Format:</dt>
+          <dd>Paperback</dd>
+        </dl>
+
+        <!-- Quantity and add to cart -->
+        <div class="purchase-actions">
+          <label for="quantity">Quantity:</label>
+          <input type="number" id="quantity" value="1" min="1" max="10">
+          <button class="btn-primary">Add to Cart</button>
+          <button class="btn-secondary">Buy Now</button>
+        </div>
+
+      </div>
+    </article>
+
+    <!-- Reviews section -->
+    <section class="reviews">
+      <h3>Customer Reviews</h3>
+
+      <article class="review">
+        <h4>Inspirational and motivating</h4>
+        <p class="reviewer">By <strong>Rahul S.</strong> | ⭐⭐⭐⭐⭐ | 15 Mar 2025</p>
+        <p>This book changed my perspective on hard work and dedication.
+          Kalam's journey from humble beginnings is truly inspirational.</p>
+      </article>
+
+      <article class="review">
+        <h4>A must-read for every Indian</h4>
+        <p class="reviewer">By <strong>Priya M.</strong> | ⭐⭐⭐⭐⭐ | 2 Apr 2025</p>
+        <p>Couldn't put it down. Beautifully written and deeply moving.
+          Recommended to everyone I know.</p>
+      </article>
+
+      <article class="review">
+        <h4>Changed how I think about failure</h4>
+        <p class="reviewer">By <strong>Arjun K.</strong> | ⭐⭐⭐⭐⭐ | 28 Apr 2025</p>
+        <p>Kalam's resilience in the face of setbacks is something every
+          student and professional should read. The chapters on ISRO are
+          especially fascinating.</p>
+      </article>
+
+      <article class="review">
+        <h4>Perfect gift for students</h4>
+        <p class="reviewer">By <strong>Sunita R.</strong> | ⭐⭐⭐⭐ | 10 May 2025</p>
+        <p>Bought this for my daughter who is preparing for UPSC. She loved
+          every page. Simple language, powerful message. Great value for money
+          at this price.</p>
+      </article>
+
+    </section>
+
+  </main>
 
   <footer>
-    <div class="container">
-      <p>© 2025 <strong>BookHive</strong> — An Indian Online Bookstore 🇮🇳</p>
-    </div>
+    <p>&copy; 2026 BookHive. All rights reserved.</p>
   </footer>
 
   <script src="js/main.js"></script>
