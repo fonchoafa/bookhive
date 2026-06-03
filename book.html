@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Detail - BookHive</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="css/books.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">Book<span>Hive</span> 📚</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li class="nav-cart"><a href="cart.html">🛒 Cart <span class="cart-count" id="cartCount">0</span></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="book-detail" id="bookDetail">
+      <!-- Populated by books.js based on URL param ?id= -->
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 <strong>BookHive</strong> — An Indian Online Bookstore 🇮🇳</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/books.js"></script>
+</body>
+</html>

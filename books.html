@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Books - BookHive</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="css/books.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">Book<span>Hive</span> 📚</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li class="nav-cart"><a href="cart.html">🛒 Cart <span class="cart-count" id="cartCount">0</span></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="container">
+      <h1>All Books</h1>
+      <p style="color:var(--marigold); margin-top:8px;">Explore our collection of 10,000+ titles</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="books-layout">
+
+      <!-- Sidebar Filter -->
+      <aside class="filter-sidebar">
+        <h3>Filter Books</h3>
+        <div class="filter-group">
+          <label>Genre</label>
+          <select id="filterGenre">
+            <option value="">All Genres</option>
+            <option value="fiction">Fiction</option>
+            <option value="non-fiction">Non-Fiction</option>
+            <option value="self-help">Self-Help</option>
+            <option value="children">Children</option>
+            <option value="history">History</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label>Language</label>
+          <select id="filterLang">
+            <option value="">All Languages</option>
+            <option value="english">English</option>
+            <option value="hindi">Hindi</option>
+            <option value="tamil">Tamil</option>
+            <option value="bengali">Bengali</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label>Max Price: ₹<span id="priceVal">1000</span></label>
+          <input type="range" id="filterPrice" min="100" max="2000" value="1000" />
+        </div>
+        <button class="btn btn-primary" style="width:100%" onclick="filterBooks()">Apply Filters</button>
+      </aside>
+
+      <!-- Books Grid -->
+      <main>
+        <div class="search-bar">
+          <input type="text" id="searchInput" placeholder="Search by title, author..." />
+          <button class="btn btn-primary" onclick="searchBooks()">Search</button>
+        </div>
+        <div class="books-grid" id="booksGrid">
+          <!-- Populated by books.js -->
+        </div>
+      </main>
+
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 <strong>BookHive</strong> — An Indian Online Bookstore 🇮🇳</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/books.js"></script>
+  <script src="js/search.js"></script>
+</body>
+</html>

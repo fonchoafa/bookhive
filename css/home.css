@@ -1,0 +1,93 @@
+/* =============================================
+   BOOKHIVE - Home Page Styles (home.css)
+   ============================================= */
+
+/* --- Navbar --- */
+.navbar {
+  background: var(--midnight);
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar .logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: var(--parchment);
+}
+.navbar .logo span { color: var(--marigold); }
+.nav-links { display: flex; gap: 24px; }
+.nav-links a { color: var(--parchment); font-weight: 600; transition: color 0.2s; }
+.nav-links a:hover { color: var(--marigold); }
+.nav-cart { position: relative; }
+.cart-count {
+  position: absolute; top: -8px; right: -10px;
+  background: var(--crimson); color: white;
+  font-size: 11px; border-radius: 50%; width: 18px; height: 18px;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* --- Hero --- */
+.hero {
+  background: linear-gradient(135deg, var(--midnight) 60%, var(--crimson));
+  color: var(--parchment);
+  padding: 100px 0;
+  text-align: center;
+}
+.hero h1 { font-size: 3rem; margin-bottom: 16px; }
+.hero p  { font-size: 1.2rem; margin-bottom: 32px; color: var(--marigold); }
+.hero-buttons { display: flex; gap: 16px; justify-content: center; }
+
+/* --- Featured Books --- */
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+}
+.book-card {
+  background: var(--white);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  transition: transform 0.2s;
+}
+.book-card:hover { transform: translateY(-4px); }
+.book-card img { width: 100%; height: 240px; object-fit: cover; }
+.book-card-body { padding: 16px; }
+.book-card-body h3 { font-size: 1rem; margin-bottom: 6px; }
+.book-card-body .author { color: var(--text-muted); font-size: 0.85rem; }
+.book-card-body .price { color: var(--crimson); font-weight: 700; margin-top: 8px; font-size: 1.1rem; }
+
+/* --- Categories --- */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
+}
+.category-card {
+  background: var(--midnight);
+  color: var(--parchment);
+  text-align: center;
+  padding: 24px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.category-card:hover { background: var(--crimson); }
+.category-card .icon { font-size: 2rem; margin-bottom: 8px; }
+
+/* --- Footer --- */
+footer {
+  background: var(--midnight);
+  color: var(--parchment);
+  text-align: center;
+  padding: 32px 0;
+  font-size: 0.9rem;
+}
+footer a { color: var(--marigold); }

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BookHive - An Indian Online Bookstore</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">Book<span>Hive</span> 📚</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li class="nav-cart"><a href="cart.html">🛒 Cart <span class="cart-count" id="cartCount">0</span></a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>India's Favourite Online Bookstore 📖</h1>
+      <p>Discover books in Hindi, English, Tamil, Bengali & more</p>
+      <div class="hero-buttons">
+        <a href="books.html" class="btn btn-primary">Browse Books</a>
+        <a href="about.html" class="btn btn-outline" style="color:#F8F1E4;border-color:#F8F1E4;">Our Story</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Books -->
+  <section id="featured">
+    <div class="container">
+      <h2 style="text-align:center; margin-bottom:32px;">Featured Books</h2>
+      <div class="books-grid" id="featuredBooks">
+        <!-- Populated by main.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section style="background: var(--light-gray);">
+    <div class="container">
+      <h2 style="text-align:center; margin-bottom:32px;">Browse by Category</h2>
+      <div class="categories-grid">
+        <div class="category-card"><div class="icon">📚</div>Fiction</div>
+        <div class="category-card"><div class="icon">🧘</div>Self-Help</div>
+        <div class="category-card"><div class="icon">🇮🇳</div>Indian Authors</div>
+        <div class="category-card"><div class="icon">👶</div>Children</div>
+        <div class="category-card"><div class="icon">📜</div>History</div>
+        <div class="category-card"><div class="icon">💻</div>Technology</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 <strong>BookHive</strong> — An Indian Online Bookstore 🇮🇳</p>
+      <p style="margin-top:8px">Made with ❤️ for readers across India | <a href="contact.html">Contact Us</a></p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

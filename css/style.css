@@ -1,0 +1,58 @@
+/* =============================================
+   BOOKHIVE - Global Styles
+   style.css - Variables, resets, shared styles
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Nunito:wght@400;600;700&display=swap');
+
+/* --- Color Palette --- */
+:root {
+  --crimson:    #C0392B;
+  --marigold:   #F39C12;
+  --midnight:   #2C3E50;
+  --parchment:  #F8F1E4;
+  --emerald:    #27AE60;
+  --white:      #FFFFFF;
+  --light-gray: #F4F4F4;
+  --text-dark:  #2C3E50;
+  --text-muted: #7F8C8D;
+}
+
+/* --- Reset --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: var(--parchment);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+ul { list-style: none; }
+
+/* --- Typography --- */
+h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+
+/* --- Buttons --- */
+.btn {
+  display: inline-block;
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.2s;
+}
+.btn:hover { opacity: 0.88; }
+.btn-primary { background: var(--crimson); color: var(--white); }
+.btn-accent  { background: var(--marigold); color: var(--white); }
+.btn-success { background: var(--emerald);  color: var(--white); }
+.btn-outline { background: transparent; border: 2px solid var(--crimson); color: var(--crimson); }
+
+/* --- Container --- */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* --- Section spacing --- */
+section { padding: 60px 0; }
