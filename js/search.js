@@ -11,7 +11,7 @@ const categoryFilter = document.getElementById("category-filter");
 const sortSelect = document.getElementById("sort");
 
 function applyFilters() {
-  let filteredBooks = [...books];
+  let filteredBooks = [...BOOKS];
 
   // 1. Search filter
   const searchTerm = searchInput ? searchInput.value.trim().toLowerCase() : "";
@@ -25,7 +25,7 @@ function applyFilters() {
   // 2. Category filter
   const selectedCategory = categoryFilter ? categoryFilter.value : "all";
   if (selectedCategory && selectedCategory !== "all") {
-    filteredBooks = filteredBooks.filter(book => book.category === selectedCategory);
+    filteredBooks = filteredBooks.filter(book => book.genre === selectedCategory);
   }
 
   // 3. Sort
@@ -75,9 +75,19 @@ if (sortSelect) {
   sortSelect.addEventListener("change", applyFilters);
 }
 
-// Run on page load if on books page
+// ====================
+// PAGE INIT
+// ====================
 document.addEventListener('DOMContentLoaded', () => {
-  if (searchInput || categoryFilter) {
+  const urlParams = new URLSearchParams(window.location.search);
+  const categoryParam = urlParams.get('category');
+
+  if (categoryParam && categoryFilter) {
+    const matchOption = [...categoryFilter.options].find(o => o.value === categoryParam);
+    if (matchOption) categoryFilter.value = categoryParam;
+  }
+
+  if (categoryParam) {
     applyFilters();
   }
 });

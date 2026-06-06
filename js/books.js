@@ -68,26 +68,34 @@ document.addEventListener('DOMContentLoaded', () => {
   const container = document.getElementById('books-container');
   if (!container) return;
 
-  // Check if a category was passed from the homepage e.g. books.html?category=fiction
+  // Read ?category= from URL
   const urlParams = new URLSearchParams(window.location.search);
   const categoryParam = urlParams.get('category');
 
   if (categoryParam) {
-    // Pre-select the dropdown to match the category
+    // Pre-select the matching dropdown option if it exists
     const categoryFilter = document.getElementById('category-filter');
     if (categoryFilter) {
-      // Match against value or lang field
       const matchOption = [...categoryFilter.options].find(o => o.value === categoryParam);
       if (matchOption) categoryFilter.value = categoryParam;
     }
 
-    // Filter books by genre OR lang matching the category param
+    // Highlight the active category pill
+    document.querySelectorAll('.category-list a').forEach(link => {
+      const href = link.getAttribute('href');
+      if (href && href.includes(`category=${categoryParam}`)) {
+        link.classList.add('active');
+      }
+    });
+
+    // Filter: match genre OR lang against the category param
     const filtered = BOOKS.filter(b =>
       b.genre === categoryParam || b.lang === categoryParam
     );
+
     renderBooks(filtered.length > 0 ? filtered : BOOKS);
-    attachAddToCartListeners();
   }
+  // NOTE: if no categoryParam, main.js handles loading all books via loadBooksWithDelay()
 
   // Price slider live label update
   const priceSlider = document.getElementById('filterPrice');
@@ -104,14 +112,14 @@ function renderBooks(books) {
   const container = document.getElementById('books-container');
   if (!container) return;
   if (books.length === 0) {
-    container.innerHTML = `<p class="no-results">No books found. <a href="books.html">Clear filters</a></p>`;
+    container.innerHTML = `<p class="no-results">No books found in this category. <a href="books.html">See all books</a></p>`;
     return;
   }
   container.innerHTML = books.map(book => createBookCard(book)).join('');
   attachAddToCartListeners();
 }
 
-// Filter books from sidebar controls
+// Filter books from sidebar dropdown
 function filterBooks() {
   const genre    = document.getElementById('category-filter')?.value || 'all';
   const maxPrice = parseInt(document.getElementById('filterPrice')?.value || 2000);

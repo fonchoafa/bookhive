@@ -122,7 +122,6 @@ const BOOKS = [
 // LOADING STATE
 // ====================
 
-// Show loader while books are being rendered
 function showLoader() {
   const container = document.getElementById("books-container");
   if (container) {
@@ -135,7 +134,6 @@ function showLoader() {
   }
 }
 
-// Simulate loading delay (visual effect), then render books
 function loadBooksWithDelay() {
   const container = document.getElementById("books-container");
   if (!container) return;
@@ -229,12 +227,14 @@ function attachAddToCartListeners() {
 document.addEventListener('DOMContentLoaded', () => {
   updateCartCount();
 
-  // Books listing page — load with spinner
-  if (document.getElementById("books-container")) {
+  // Books listing page — only load all books if no ?category= in URL
+  // books.js handles rendering when a category filter is present
+  const hasCategory = new URLSearchParams(window.location.search).get('category');
+  if (document.getElementById("books-container") && !hasCategory) {
     loadBooksWithDelay();
   }
 
-  // Homepage featured books (no delay needed)
+  // Homepage featured books
   const featuredEl = document.getElementById("featured-books");
   if (featuredEl) {
     featuredEl.innerHTML = BOOKS.slice(0, 6).map(book => createBookCard(book)).join('');
