@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
+  <!-- Hexagon background -->
+  <polygon points="80,4 152,42 152,118 80,156 8,118 8,42" fill="#C0392B"/>
+  <!-- Marigold top stripe -->
+  <polygon points="80,4 152,42 152,66 8,66 8,42" fill="#F39C12"/>
+  <!-- Book body -->
+  <rect x="28" y="74" width="104" height="66" rx="5" fill="#FFF8F0"/>
+  <!-- Book spine -->
+  <rect x="74" y="74" width="12" height="66" fill="#E8D5B0"/>
+  <!-- Left page lines -->
+  <line x1="38" y1="92"  x2="70" y2="92"  stroke="#C0392B" stroke-width="4" stroke-linecap="round"/>
+  <line x1="38" y1="104" x2="70" y2="104" stroke="#C0392B" stroke-width="3" stroke-linecap="round" opacity="0.45"/>
+  <line x1="38" y1="115" x2="70" y2="115" stroke="#C0392B" stroke-width="3" stroke-linecap="round" opacity="0.45"/>
+  <line x1="38" y1="126" x2="70" y2="126" stroke="#C0392B" stroke-width="3" stroke-linecap="round" opacity="0.45"/>
+  <!-- Right page lines -->
+  <line x1="90" y1="92"  x2="122" y2="92"  stroke="#C0392B" stroke-width="4" stroke-linecap="round"/>
+  <line x1="90" y1="104" x2="122" y2="104" stroke="#C0392B" stroke-width="3" stroke-linecap="round" opacity="0.45"/>
+  <line x1="90" y1="115" x2="122" y2="115" stroke="#C0392B" stroke-width="3" stroke-linecap="round" opacity="0.45"/>
+  <line x1="90" y1="126" x2="122" y2="126" stroke="#C0392B" stroke-width="3" stroke-linecap="round" opacity="0.45"/>
+  <!-- Bee dots on stripe -->
+  <circle cx="36"  cy="54" r="6" fill="#2C3E50" opacity="0.75"/>
+  <circle cx="52"  cy="49" r="4" fill="#FFF8F0" opacity="0.6"/>
+  <circle cx="108" cy="54" r="6" fill="#2C3E50" opacity="0.75"/>
+  <circle cx="124" cy="49" r="4" fill="#FFF8F0" opacity="0.6"/>
+</svg>

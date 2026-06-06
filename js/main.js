@@ -78,7 +78,7 @@ console.log("Total:", total);
 console.log("After discount:", finalPrice.toFixed(2));
 
 // ====================
-// DOM MANIPULATION - First Time!
+// DOM MANIPULATION
 // ====================
 const heroTitle = document.getElementById("hero-title");
 const heroSubtitle = document.getElementById("hero-subtitle");
@@ -100,19 +100,56 @@ if (heroSubtitle) {
   heroSubtitle.textContent = `${greeting} Find your next great read.`;
 }
 
-// --- Sample Book Data (used across pages) ---
+// ====================
+// BOOK DATA
+// ====================
 const BOOKS = [
-  { id: 1, title: "The White Tiger",      author: "Aravind Adiga",    price: 299,  genre: "fiction",   lang: "english", cover: "images/book1.jpg" },
-  { id: 2, title: "Malgudi Days",         author: "R.K. Narayan",     price: 199,  genre: "fiction",   lang: "english", cover: "images/book2.jpg" },
-  { id: 3, title: "Wings of Fire",        author: "A.P.J. Abdul Kalam", price: 250, genre: "non-fiction", lang: "english", cover: "images/book3.jpg" },
-  { id: 4, title: "Godan",               author: "Munshi Premchand",  price: 149,  genre: "fiction",   lang: "hindi",   cover: "images/book4.jpg" },
-  { id: 5, title: "The God of Small Things", author: "Arundhati Roy", price: 350, genre: "fiction",   lang: "english", cover: "images/book5.jpg" },
-  { id: 6, title: "Ikigai",              author: "Héctor García",     price: 399,  genre: "self-help", lang: "english", cover: "images/book6.jpg" },
-  { id: 7, title: "Panchatantra",        author: "Vishnu Sharma",     price: 120,  genre: "children",  lang: "hindi",   cover: "images/book7.jpg" },
-  { id: 8, title: "Discovery of India",  author: "Jawaharlal Nehru",  price: 450,  genre: "history",   lang: "english", cover: "images/book8.jpg" },
+  { id: 1,  title: "The White Tiger",         author: "Aravind Adiga",        price: 299,  genre: "fiction",     lang: "english", cover: "images/books/white-tiger.jpg" },
+  { id: 2,  title: "Malgudi Days",            author: "R.K. Narayan",         price: 199,  genre: "fiction",     lang: "english", cover: "images/books/malgudi-days.jpg" },
+  { id: 3,  title: "Wings of Fire",           author: "A.P.J. Abdul Kalam",   price: 299,  genre: "biography",   lang: "english", cover: "images/books/wings-of-fire.jpg" },
+  { id: 4,  title: "Godan",                   author: "Munshi Premchand",     price: 149,  genre: "fiction",     lang: "hindi",   cover: "images/books/godan.jpg" },
+  { id: 5,  title: "The God of Small Things", author: "Arundhati Roy",        price: 349,  genre: "fiction",     lang: "english", cover: "images/books/god-of-small-things.jpg" },
+  { id: 6,  title: "Ikigai",                  author: "Héctor García",        price: 399,  genre: "self-help",   lang: "english", cover: "images/books/ikigai.jpg" },
+  { id: 7,  title: "Panchatantra",            author: "Vishnu Sharma",        price: 120,  genre: "children",    lang: "hindi",   cover: "images/books/panchatantra.jpg" },
+  { id: 8,  title: "The Discovery of India",  author: "Jawaharlal Nehru",     price: 450,  genre: "history",     lang: "english", cover: "images/books/discovery-of-india.jpg" },
+  { id: 9,  title: "The Alchemist",           author: "Paulo Coelho",         price: 349,  genre: "fiction",     lang: "english", cover: "images/books/the-alchemist.jpg" },
+  { id: 10, title: "Atomic Habits",           author: "James Clear",          price: 499,  genre: "self-help",   lang: "english", cover: "images/books/atomic-habits.jpg" },
+  { id: 11, title: "Rich Dad Poor Dad",       author: "Robert Kiyosaki",      price: 329,  genre: "business",    lang: "english", cover: "images/books/rich-dad-poor-dad.jpg" },
+  { id: 12, title: "Sapiens",                 author: "Yuval Noah Harari",    price: 599,  genre: "history",     lang: "english", cover: "images/books/sapiens.jpg" },
 ];
 
-// --- Cart Utilities (localStorage) ---
+// ====================
+// LOADING STATE
+// ====================
+
+// Show loader while books are being rendered
+function showLoader() {
+  const container = document.getElementById("books-container");
+  if (container) {
+    container.innerHTML = `
+      <div class="loader-wrapper">
+        <div class="loader-spinner"></div>
+        <p class="loader-text">Loading books for you...</p>
+      </div>
+    `;
+  }
+}
+
+// Simulate loading delay (visual effect), then render books
+function loadBooksWithDelay() {
+  const container = document.getElementById("books-container");
+  if (!container) return;
+  showLoader();
+  setTimeout(() => {
+    renderBooks(BOOKS);
+    attachAddToCartListeners();
+  }, 500);
+}
+
+// ====================
+// CART UTILITIES (localStorage)
+// ====================
+
 function getCart() {
   return JSON.parse(localStorage.getItem('bookhive_cart') || '[]');
 }
@@ -143,22 +180,64 @@ function updateCartCount() {
   if (countEl) countEl.textContent = total;
 }
 
-// --- Book Card HTML ---
+// ====================
+// BOOK CARD TEMPLATE
+// ====================
+
 function createBookCard(book) {
   return `
-    <div class="book-card">
-      <div style="background:#F0E8D8; height:240px; display:flex; align-items:center; justify-content:center; font-size:3rem;">📖</div>
-      <div class="book-card-body">
-        <h3>${book.title}</h3>
-        <p class="author">${book.author}</p>
-        <p class="price">₹${book.price}</p>
-        <a href="book.html?id=${book.id}" class="btn btn-outline" style="font-size:0.85rem; padding:6px 14px; margin-right:8px;">Details</a>
-        <button class="btn btn-primary" style="font-size:0.85rem; padding:6px 14px;" onclick="addToCart(${book.id})">Add to Cart</button>
-      </div>
-    </div>`;
+    <article class="book-card">
+      <a href="book.html?id=${book.id}">
+        <img src="${book.cover}" alt="${book.title} book cover"
+             loading="lazy"
+             onerror="this.src='assets/books.jpg'"
+        />
+      </a>
+      <h3><a href="book.html?id=${book.id}" style="color:inherit;">${book.title}</a></h3>
+      <p class="author">${book.author}</p>
+      <p class="price">₹${book.price}</p>
+      <a href="book.html?id=${book.id}" class="btn-outline-small">View Details</a>
+      <button class="add-to-cart" data-id="${book.id}">Add to Cart</button>
+    </article>`;
 }
 
-// --- On page load ---
+// Render a list of books into #books-container
+function renderBooks(books) {
+  const container = document.getElementById("books-container");
+  if (!container) return;
+  if (books.length === 0) {
+    container.innerHTML = `<p class="no-results">No books found. <a href="books.html">Clear filters</a></p>`;
+    return;
+  }
+  container.innerHTML = books.map(book => createBookCard(book)).join('');
+}
+
+// Attach click listeners to all Add to Cart buttons
+function attachAddToCartListeners() {
+  document.querySelectorAll('.add-to-cart').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = parseInt(btn.getAttribute('data-id'));
+      addToCart(id);
+    });
+  });
+}
+
+// ====================
+// PAGE INIT
+// ====================
+
 document.addEventListener('DOMContentLoaded', () => {
   updateCartCount();
+
+  // Books listing page — load with spinner
+  if (document.getElementById("books-container")) {
+    loadBooksWithDelay();
+  }
+
+  // Homepage featured books (no delay needed)
+  const featuredEl = document.getElementById("featured-books");
+  if (featuredEl) {
+    featuredEl.innerHTML = BOOKS.slice(0, 6).map(book => createBookCard(book)).join('');
+    attachAddToCartListeners();
+  }
 });
