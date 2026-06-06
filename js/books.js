@@ -64,29 +64,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ----------------------------------------
   // BOOKS LISTING PAGE (books.html)
+  // Only load with spinner when no category URL param
+  // (search.js handles filtering when param is present)
   // ----------------------------------------
-  const container = document.getElementById('books-container');
-  if (!container) return;
-
-  // Check if a category was passed from the homepage e.g. books.html?category=fiction
-  const urlParams = new URLSearchParams(window.location.search);
-  const categoryParam = urlParams.get('category');
-
-  if (categoryParam) {
-    // Pre-select the dropdown to match the category
-    const categoryFilter = document.getElementById('category-filter');
-    if (categoryFilter) {
-      // Match against value or lang field
-      const matchOption = [...categoryFilter.options].find(o => o.value === categoryParam);
-      if (matchOption) categoryFilter.value = categoryParam;
+  if (document.getElementById("books-container")) {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (!urlParams.has('category')) {
+      loadBooksWithDelay();
     }
-
-    // Filter books by genre OR lang matching the category param
-    const filtered = BOOKS.filter(b =>
-      b.genre === categoryParam || b.lang === categoryParam
-    );
-    renderBooks(filtered.length > 0 ? filtered : BOOKS);
-    attachAddToCartListeners();
   }
 
   // Price slider live label update
