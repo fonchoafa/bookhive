@@ -59,13 +59,10 @@ nav a:hover { color: var(--marigold); }
   font-size: 2rem;
   margin-bottom: 36px;
 }
-.featured {
+#featured-books {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
   gap: 24px;
-}
-.featured h2 {
-  grid-column: 1 / -1;
 }
 
 /* --- BOOK CARD --- */
@@ -82,20 +79,23 @@ nav a:hover { color: var(--marigold); }
   transform: translateY(-5px);
   box-shadow: 0 8px 24px rgba(0,0,0,0.13);
 }
+.book-card a img,
 .book-card img {
   width: 100%;
   height: 220px;
   object-fit: cover;
   background: #F0E8D8;
-}
-/* Placeholder when image missing */
-.book-card img[src=""], .book-card img:not([src]) {
-  min-height: 220px;
+  display: block;
 }
 .book-card h3 {
   font-size: 1rem;
   padding: 14px 14px 4px;
 }
+.book-card h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+.book-card h3 a:hover { color: var(--crimson); }
 .book-card p {
   padding: 0 14px;
   color: var(--text-muted);
@@ -107,8 +107,9 @@ nav a:hover { color: var(--marigold); }
   font-size: 1.1rem;
   padding: 6px 14px;
 }
-.book-card button {
-  margin: 10px 14px 14px;
+.book-card button,
+.book-card .add-to-cart {
+  margin: 4px 14px 14px;
   padding: 9px 0;
   background: var(--crimson);
   color: var(--white);
@@ -118,8 +119,13 @@ nav a:hover { color: var(--marigold); }
   font-weight: 600;
   cursor: pointer;
   transition: background 0.2s;
+  width: calc(100% - 28px);
 }
-.book-card button:hover { background: #a93226; }
+.book-card button:hover,
+.book-card .add-to-cart:hover { background: #a93226; }
+.book-card .btn-outline-small {
+  margin: 10px 14px 4px;
+}
 
 /* --- CATEGORIES --- */
 .categories {
@@ -143,10 +149,14 @@ nav a:hover { color: var(--marigold); }
   text-align: center;
   cursor: pointer;
   transition: background 0.2s, transform 0.2s;
+  /* Makes <a> tag look like a card, not a link */
+  text-decoration: none;
+  display: block;
 }
 .category:hover {
   background: var(--crimson);
   transform: translateY(-3px);
+  color: var(--parchment);
 }
 .category h3 {
   font-family: 'Nunito', sans-serif;
