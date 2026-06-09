@@ -104,18 +104,18 @@ if (heroSubtitle) {
 // BOOK DATA
 // ====================
 const BOOKS = [
-  { id: 1,  title: "The White Tiger",         author: "Aravind Adiga",        price: 299,  genre: "fiction",     lang: "english", cover: "images/books/white-tiger.jpg" },
-  { id: 2,  title: "Malgudi Days",            author: "R.K. Narayan",         price: 199,  genre: "fiction",     lang: "english", cover: "images/books/malgudi-days.jpg" },
-  { id: 3,  title: "Wings of Fire",           author: "A.P.J. Abdul Kalam",   price: 299,  genre: "biography",   lang: "english", cover: "images/books/wings-of-fire.jpg" },
-  { id: 4,  title: "Godan",                   author: "Munshi Premchand",     price: 149,  genre: "fiction",     lang: "hindi",   cover: "images/books/godan.jpg" },
-  { id: 5,  title: "The God of Small Things", author: "Arundhati Roy",        price: 349,  genre: "fiction",     lang: "english", cover: "images/books/god-of-small-things.jpg" },
-  { id: 6,  title: "Ikigai",                  author: "Héctor García",        price: 399,  genre: "self-help",   lang: "english", cover: "images/books/ikigai.jpg" },
-  { id: 7,  title: "Panchatantra",            author: "Vishnu Sharma",        price: 120,  genre: "children",    lang: "hindi",   cover: "images/books/panchatantra.jpg" },
-  { id: 8,  title: "The Discovery of India",  author: "Jawaharlal Nehru",     price: 450,  genre: "history",     lang: "english", cover: "images/books/discovery-of-india.jpg" },
-  { id: 9,  title: "The Alchemist",           author: "Paulo Coelho",         price: 349,  genre: "fiction",     lang: "english", cover: "images/books/the-alchemist.jpg" },
-  { id: 10, title: "Atomic Habits",           author: "James Clear",          price: 499,  genre: "self-help",   lang: "english", cover: "images/books/atomic-habits.jpg" },
-  { id: 11, title: "Rich Dad Poor Dad",       author: "Robert Kiyosaki",      price: 329,  genre: "business",    lang: "english", cover: "images/books/rich-dad-poor-dad.jpg" },
-  { id: 12, title: "Sapiens",                 author: "Yuval Noah Harari",    price: 599,  genre: "history",     lang: "english", cover: "images/books/sapiens.jpg" },
+  { id: 1,  title: "The White Tiger",         author: "Aravind Adiga",        price: 299,  genre: "fiction",     lang: "english", cover: "assets/book 1.jpg" },
+  { id: 2,  title: "Malgudi Days",            author: "R.K. Narayan",         price: 199,  genre: "fiction",     lang: "english", cover: "assets/book 2.jpg" },
+  { id: 3,  title: "Wings of Fire",           author: "A.P.J. Abdul Kalam",   price: 299,  genre: "biography",   lang: "english", cover: "assets/book 3.jpg" },
+  { id: 4,  title: "Godan",                   author: "Munshi Premchand",     price: 149,  genre: "fiction",     lang: "hindi",   cover: "assets/book 4.jpg" },
+  { id: 5,  title: "The God of Small Things", author: "Arundhati Roy",        price: 349,  genre: "fiction",     lang: "english", cover: "assets/book 1.jpg" },
+  { id: 6,  title: "Ikigai",                  author: "Héctor García",        price: 399,  genre: "self-help",   lang: "english", cover: "assets/book 2.jpg" },
+  { id: 7,  title: "Panchatantra",            author: "Vishnu Sharma",        price: 120,  genre: "children",    lang: "hindi",   cover: "assets/book 3.jpg" },
+  { id: 8,  title: "The Discovery of India",  author: "Jawaharlal Nehru",     price: 450,  genre: "history",     lang: "english", cover: "assets/book 4.jpg" },
+  { id: 9,  title: "The Alchemist",           author: "Paulo Coelho",         price: 349,  genre: "fiction",     lang: "english", cover: "assets/book 1.jpg" },
+  { id: 10, title: "Atomic Habits",           author: "James Clear",          price: 499,  genre: "self-help",   lang: "english", cover: "assets/book 2.jpg" },
+  { id: 11, title: "Rich Dad Poor Dad",       author: "Robert Kiyosaki",      price: 329,  genre: "business",    lang: "english", cover: "assets/book 3.jpg" },
+  { id: 12, title: "Sapiens",                 author: "Yuval Noah Harari",    price: 599,  genre: "history",     lang: "english", cover: "assets/book 4.jpg" },
 ];
 
 // ====================

@@ -6,38 +6,35 @@
   <title>Cart - BookHive</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="css/books.css" />
   <link rel="stylesheet" href="css/responsive.css" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 </head>
 <body>
 
-  <nav class="navbar">
-    <div class="container">
-      <a href="index.html" class="logo">Book<span>Hive</span> 📚</a>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="books.html">Books</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="login.html">Login</a></li>
-        <li class="nav-cart"><a href="cart.html">🛒 Cart (<span id="cart-count">0</span>)</a></li>
-      </ul>
-    </div>
-  </nav>
+  <header>
+    <h1>📚 BookHive</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="books.html">Books</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="cart.html">🛒 Cart (<span id="cart-count">0</span>)</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
 
-  <div class="page-header">
-    <div class="container"><h1>Your Cart 🛒</h1></div>
-  </div>
+  <section class="page-header">
+    <h2>Your Cart 🛒</h2>
+  </section>
 
-  <div class="container" style="padding: 40px 20px;">
+  <div class="cart-section">
     <div id="cartItems"><!-- Populated by cart.js --></div>
     <div id="cartSummary" style="text-align:right; margin-top:24px;"></div>
   </div>
 
   <footer>
-    <div class="container">
-      <p>© 2025 <strong>BookHive</strong> — An Indian Online Bookstore 🇮🇳</p>
-    </div>
+    <p>© 2025 <strong>BookHive</strong> — An Indian Online Bookstore 🇮🇳</p>
   </footer>
 
   <script src="js/main.js"></script>
